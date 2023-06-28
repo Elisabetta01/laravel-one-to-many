@@ -14,6 +14,10 @@
              <h3>{{ $project->title }}</h3>
              <p>{{ $project->description }}</p>
              <img src="{{ asset('storage/' . $project->img) }}" alt="" class="img-fluid">
+
+             <div>
+                Categoria: {{ $project->category->name }}
+             </div>
         </div>
 
      </div>

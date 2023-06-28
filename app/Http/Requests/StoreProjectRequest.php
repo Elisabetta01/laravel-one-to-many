@@ -31,6 +31,7 @@ class StoreProjectRequest extends FormRequest
             'title' => ['required','max:255', Rule::unique('projects')->ignore($this->project)],
             'description' => ['nullable'],
             'img' => ['nullable','image'],
+            'category_id' => ['nullable', 'exists:categories,id'],
         ];
     }
 }

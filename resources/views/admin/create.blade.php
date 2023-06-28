@@ -40,6 +40,19 @@
             <input type="file" id="projects-img" name="img" class="form-control">
         </div>
 
+        <div class="form-group">
+            <label for="category" class="form-label">Categorie</label>
+            <select class="form-select @error('category_id') is-invalid @enderror" name="category_id" id="category">
+                <option value="">-- Scegli una Categoria --</option>
+                @foreach ($categories as $element)
+                    <option value="{{ $element->id }}">{{ $element->name }}</option>
+                @endforeach
+            </select>
+            @error('category_id')
+                <div class="alert alert-danger">{{$message}}</div>
+            @enderror
+        </div>
+
         <button type="submit" class="btn btn-primary my-4">Crea</button>
 
     </form>
